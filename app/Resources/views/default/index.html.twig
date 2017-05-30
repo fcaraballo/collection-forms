@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12 center-align">
+            <h2>Veruscript - Create new Co-Author</h2>
+        </div>
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Submissions</a></li>
+                <li class="breadcrumb-item"><a href="#">1</a></li>
+                <li class="breadcrumb-item"><a href="#">Co-Authors</a></li>
+                <li class="breadcrumb-item active">New</li>
+            </ol>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 center-align">
+            Create a new Co-author for a submission created by: {{ submission.author.name }} {{ submission.author.lastName }}
+
+            {{ form_start(form) }}
+
+            <h3>Co-Authors</h3>
+
+            {{ form_row(form.name) }}
+            {{ form_row(form.lastName) }}
+            {{ form_row(form.email) }}
+
+            <h4>Affiliations</h4>
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="affiliations" data-prototype="{{ form_widget(form.affiliations.vars.prototype)|e('html_attr') }}">
+                        {% for affiliation in form.affiliations %}
+                            <li>
+                                {{ form_row(affiliation.institutionName) }}
+                                {{ form_row(affiliation.country) }}
+                                {{ form_row(affiliation.city) }}
+                                {{ form_row(affiliation.address) }}
+                            <li/>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            {{ form_errors(form) }}
+
+            {{ form_row(form.save) }}
+
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
+
+

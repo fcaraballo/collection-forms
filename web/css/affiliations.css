@@ -1,0 +1,11 @@
+.affiliations {
+    background-color : #FCFCFC;
+    padding          : 12px 0px;
+}
+
+.affiliations li {
+    list-style  : none;
+    margin-left : 0;
+    margin-top  : 15px;
+    margin-bottom : 50px;
+}
