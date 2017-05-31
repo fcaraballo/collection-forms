@@ -1,16 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: pc
- * Date: 29/05/17
- * Time: 20:40
- */
 
 namespace AppBundle\Entity;
 
-
 use Doctrine\Common\Collections\ArrayCollection;
 
+/**
+ * @author Fernando Caraballo <caraballo.ortiz@gmail.com>
+ */
 class Submission
 {
     /**
